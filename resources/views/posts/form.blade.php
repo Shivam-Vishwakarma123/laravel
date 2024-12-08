@@ -2,7 +2,7 @@
 
 @section('content')
     <h1>{{ $post->exists ? 'Edit Post' : 'Create New Post' }}</h1>
-    <form action="{{ url('posts/' . ($post->exists ? 'update/' . $post->id : 'add')) }}" method="POST">
+    <form action="{{ url('posts/' . ($post->exists ? 'update/' . $post->id : 'store')) }}" method="POST">
         @csrf
         <div class="mb-3">
             <label for="title" class="form-label">Title</label>

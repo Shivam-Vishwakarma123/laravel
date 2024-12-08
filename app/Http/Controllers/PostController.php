@@ -10,7 +10,8 @@ class PostController extends Controller
     public function handleAction(Request $request, $action, $id = null)
     {
         switch ($action) {
-            case 'form': // Handles both create and edit actions
+            case 'add':
+            case 'edit':
                 $post = $id ? Post::findOrFail($id) : new Post();
                 return $this->showForm($post); // Show form for creating or editing a post
     
